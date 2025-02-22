@@ -93,7 +93,7 @@ This is a YouTube clone built using modern web technologies. It allows users to 
 - `GET /api/comments/:videoId` - Get all comments for a video
 
 ## Contributors
-- [Your Name](https://github.com/your-username)
+- [Indrajith N](https://github.com/your-username)
 
 ## License
 This project is licensed under the MIT License.
