@@ -1,0 +1,156 @@
+/* Center the container both vertically and horizontally */
+.upload-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  margin-top: 6rem;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out;  /* Apply fade-in animation */
+}
+
+.video-feed {
+  margin-left: 220px; /* Default offset when sidebar is visible */
+  flex-grow: 1;
+  padding: 20px;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow-y: auto; /* Ensure content is scrollable if it's too long */
+  transition: margin-left 0.3s ease; /* Smooth transition when sidebar toggles */
+}
+
+/* Add a subtle fade-in animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style the title */
+.upload-form h2 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Style the form group */
+.form-group {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+/* Style the input fields */
+input.form-control,
+textarea.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Input focus effect */
+input.form-control:focus,
+textarea.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Style the submit button */
+button.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Change button color on hover */
+button.btn:hover {
+  background-color: #0056b3;
+}
+
+/* Add scaling effect on button click */
+button.btn:active {
+  transform: scale(0.98);
+}
+
+/* Spinner styling while uploading */
+.spinner-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 123, 255, 0.3);
+  border-top: 4px solid #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Error message styling */
+.error-message {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Register link styling */
+.register-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Hover effect on register link */
+.register-link a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 600px) {
+  .upload-container {
+    width: 90%;
+    margin-top: 2rem;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  button.btn {
+    padding: 10px;
+  }
+}

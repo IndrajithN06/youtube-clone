@@ -1,0 +1,16 @@
+<div class="video-container">
+    <h1>Video Player</h1>
+  
+    <!-- Display the video player if videoId exists -->
+    <div *ngIf="videoUrl; else loading">
+        <div class="video-container">
+          <iframe [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <ng-template #loading>
+        <div class="loading">Loading video...</div>
+      </ng-template>
+      
+  </div>
+  

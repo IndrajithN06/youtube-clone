@@ -1,0 +1,55 @@
+<div class="upload-container">
+  <div class="upload-form">
+    <h2>Upload Video</h2>
+    <form (ngSubmit)="onSubmit()">
+      <!-- Title Input -->
+      <div class="form-group">
+        <label for="title">Video Title</label>
+        <input
+          type="text"
+          id="title"
+          [(ngModel)]="title"
+          name="title"
+          class="form-control"
+          placeholder="Enter video title"
+          required
+        />
+      </div>
+
+      <!-- Description Input -->
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea
+          id="description"
+          [(ngModel)]="description"
+          name="description"
+          class="form-control"
+          rows="3"
+          placeholder="Enter video description"
+        ></textarea>
+      </div>
+
+      <!-- File Input -->
+      <div class="form-group">
+        <label for="file">Select Video</label>
+        <input
+          type="file"
+          id="file"
+          (change)="onFileSelected($event)"
+          class="form-control"
+          accept="video/*"
+          required
+        />
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-primary">Upload</button>
+    </form>
+  </div>
+
+  <!-- Spinner shown while uploading -->
+  <div *ngIf="isUploading" class="spinner-container">
+    <div class="spinner"></div>
+    <p>Uploading...</p>
+  </div>
+</div>

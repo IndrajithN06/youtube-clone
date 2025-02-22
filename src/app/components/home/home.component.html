@@ -1,0 +1,32 @@
+<div class="video-list">
+  <!-- Display loading spinner or message -->
+  <div *ngIf="isLoading" class="loading-message">
+    Loading videos, please wait...
+  </div>
+
+  <!-- Display error message -->
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Display videos once they are loaded -->
+  <div *ngFor="let video of videos" class="video-item">
+    <div *ngIf="video.videoUrl">
+      <!-- Embed video using iframe without autoplay -->
+      <iframe
+        [src]="video.videoUrl | safeUrl"
+        frameborder="0"
+        allowfullscreen
+        class="video-iframe"
+      ></iframe>
+    </div>
+    <div class="video-details">
+      <h2 class="video-title">{{ video.title }}</h2>
+      <p class="video-description">{{ video.description }}</p>
+      <p class="video-user">Uploaded by: {{ video.user.username }}</p>
+      <button (click)="deleteVideo(video.id)" class="delete-button">
+        <i class="fa fa-trash"></i> Delete
+      </button>
+    </div>
+  </div>
+</div>

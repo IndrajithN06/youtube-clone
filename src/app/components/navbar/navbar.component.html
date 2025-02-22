@@ -1,0 +1,56 @@
+<nav class="navbar">
+  <!-- Hamburger Icon -->
+  <button class="hamburger" (click)="toggleSidebar()">
+    <span class="bar"></span>
+    <span class="bar"></span>
+    <span class="bar"></span>
+  </button>
+
+  <!-- Logo Next to Hamburger -->
+  <div class="logo">
+    <i class="fab fa-youtube" style="color: #FF0000; font-size: 24px;"></i>
+    YouTube 
+  </div>
+
+  <!-- Centered Search Bar -->
+  <div class="search-container">
+    <!-- Search Bar -->
+    <input
+      [(ngModel)]="searchQuery"
+      type="text"
+      placeholder="Search"
+      class="search-input"
+      [value]="searchQuery"
+    />
+    <button (click)="onSearch()" class="search-button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <!-- Voice Assistant Button -->
+  <div class="voice-assistant">
+    <button (click)="toggleListening()" [class.active]="isListening" class="voice-button">
+      <i class="fas fa-microphone"></i>
+    </button>
+  </div>
+
+  <!-- Profile Menu Dropdown -->
+  <div class="profile-menu" (click)="toggleDropdown()">
+    <i class="fas fa-user-circle"></i>
+    <div *ngIf="isDropdownVisible" class="dropdown-menu">
+      <ul>
+        <li *ngIf="isLoggedIn" (click)="navigateTo('profile')">View Profile</li>
+        <li *ngIf="isLoggedIn" (click)="navigateTo('settings')">Settings</li>
+        <li *ngIf="isLoggedIn" (click)="navigateTo('notifications')">Notifications</li>
+        <li *ngIf="isLoggedIn" (click)="navigateTo('messages')">Messages</li>
+        <li *ngIf="isLoggedIn" (click)="navigateTo('help')">Help</li>
+        
+        <!-- Login and Register links only visible if not logged in -->
+        <li *ngIf="!isLoggedIn" (click)="navigateTo('login')">Login</li>
+        <li *ngIf="!isLoggedIn" (click)="navigateTo('register')">Register</li>
+        
+        <li *ngIf="isLoggedIn" (click)="logout()">Logout</li>
+      </ul>
+    </div>
+  </div>
+</nav>

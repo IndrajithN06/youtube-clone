@@ -1,0 +1,49 @@
+/* Sidebar section */
+.sidebar {
+  width: 180px; /* Sidebar width */
+  background-color: #202121d6; /* Sidebar background color */
+  padding: 20px;
+  color: white;
+  height: calc(100vh - 76.73px); /* Sidebar height adjusted to start below navbar */
+  position: fixed;
+  top: 76.73px; /* Sidebar should start just below the navbar */
+  left: 0;
+  z-index: 500; /* Sidebar stays below the navbar */
+  overflow-y: auto; /* Allows scrolling if content exceeds sidebar height */
+}
+
+/* Navigation list styling */
+.nav-list {
+  list-style-type: none; /* Removes default list styling */
+  padding: 0;
+  margin: 0;
+}
+
+/* Navigation list items */
+.nav-list li {
+  margin: 17px /* Adds space between items */
+}
+
+/* Navigation links styling */
+.nav-list a {
+  display: block;
+  padding: 10px;
+  text-decoration: none; /* Removes underline from links */
+  color: white; /* Link text color */
+  font-size: 16px;/* Font size for links */
+  border-radius: 12px;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Hover effect for navigation links */
+.nav-list a:hover {
+  background-color: #e4e7eb; /* Background color when hovering over a link */
+  color: black
+}
+
+/* Active link styling (Optional: To highlight the active link) */
+/* Example styling for active link */
+a.active {
+  font-weight: bold;
+  color: #ff4500;  /* You can change this color to match your theme */
+}
