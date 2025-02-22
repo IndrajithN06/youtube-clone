@@ -17,7 +17,7 @@
       </iframe>
     </div>
     
-    <!-- Video Search Results (Hidden when a video is playing) -->
+
     <div *ngIf="!selectedVideoUrl && videos.length > 0" class="video-list">
       <div *ngFor="let video of videos" class="video-item" (click)="playVideo(video.id.videoId)">
         <img [src]="video.snippet.thumbnails.medium.url" alt="Video Thumbnail" />
