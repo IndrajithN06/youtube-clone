@@ -1,27 +1,100 @@
-# YoutubeClone
+# YouTube Clone
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.12.
+## Project Overview
+This is a YouTube clone built using modern web technologies. It allows users to watch, upload, like, and comment on videos, mimicking the core functionalities of YouTube.
 
-## Development server
+## Features
+- User authentication (Login/Register)
+- Video upload, playback, and streaming
+- Like and dislike videos
+- Commenting on videos
+- Search functionality
+- User profile management
+- Responsive UI
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Technologies Used
+### Frontend:
+- Angular
+- Angular Material (for UI components)
 
-## Code scaffolding
+### Backend:
+- ASP.NET Web API
+- Entity Framework Core (for database access)
+- Google API (YouTube Data API for fetching video data)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
+### Prerequisites:
+- Node.js installed
+- .NET SDK installed
+- Google API key for YouTube Data API
 
-## Build
+### Steps:
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/your-username/youtube-clone.git
+   cd youtube-clone
+   ```
+2. Install dependencies:
+   ```sh
+   cd frontend
+   npm install
+   ```
+3. Set up environment variables in a `.env` file in the backend directory:
+   ```env
+   GOOGLE_API_KEY=your_google_api_key
+   CONNECTION_STRING=your_database_connection_string
+   JWT_SECRET=your_jwt_secret
+   ```
+4. Start the backend server:
+   ```sh
+   cd backend
+   dotnet run
+   ```
+5. Start the frontend server:
+   ```sh
+   cd frontend
+   ng serve
+   ```
+6. Open `http://localhost:4200` in your browser.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Folder Structure
+```
+/youtube-clone
+│── backend/          # ASP.NET Web API server
+│   ├── Models/       # Entity Framework models
+│   ├── Controllers/  # API controllers
+│   ├── Services/     # Business logic
+│   ├── Program.cs    # Entry point
+│── frontend/         # Angular client
+│   ├── src/
+│   │   ├── app/          # Angular components & services
+│   │   ├── assets/       # Static assets
+│   │   ├── environments/ # Environment configuration
+│   │   ├── main.ts       # Bootstrap file
+│── .gitignore
+│── package.json
+│── README.md
+```
 
-## Running unit tests
+## API Endpoints
+### Authentication
+- `POST /api/auth/register` - Register a user
+- `POST /api/auth/login` - Login a user
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Videos
+- `POST /api/videos` - Upload a video
+- `GET /api/videos` - Fetch all videos
+- `GET /api/videos/:id` - Fetch a single video
+- `PUT /api/videos/:id` - Update a video
+- `DELETE /api/videos/:id` - Delete a video
 
-## Running end-to-end tests
+### Comments
+- `POST /api/comments` - Add a comment
+- `GET /api/comments/:videoId` - Get all comments for a video
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contributors
+- [Your Name](https://github.com/your-username)
 
-## Further help
+## License
+This project is licensed under the MIT License.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
